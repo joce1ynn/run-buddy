@@ -44,14 +44,14 @@
             <p>Fill out this form and one of our trainers will schedule a consult</p>
             <form>
                 <label for="name">Enter full name:</label>
-                <input type="text" placeholder="Your Name" name="name" id="name" /> 
+                <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/> 
                 <!-- a self-closing tag
                 don't contain any content or child elements
                 so the closing tag immediately follows the opening tag. -->
                 <label for="email">Enter email address:</label>
-                <input type="email" placeholder="Email Address" name="email" id="email"/>
+                <input type="email" placeholder="Email Address" name="email" id="email" class="form-input"/>
                 <label for="phone">Enter a telephone number:</label>
-                <input type="tel" placeholder="Phone Number" name="phone" id="phone"/>
+                <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
                 <p>
                     Have you worked out with a trainer before?
                     <input type="radio" name="trainer-confirm" id="trainer-yes" />
@@ -66,7 +66,7 @@
                      <!--For accessibility purposes
                     make sure to wrap the content of the <p> in the checkbox in a <label>
                     enabling the checkbox to toggle when anywhere in the content is clicked-->
-                    <input type="radio" name="age-confirm" id="checkbox" />
+                    <input type="radio" name="age-confirm" id="checkbox"/>
                 </p>
                 <button type="submit">Get running!</button>      
             </form>

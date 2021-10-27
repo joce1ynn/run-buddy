@@ -79,8 +79,8 @@ section {
   background-image: url("../images/hero-bg.jpeg");
   background-size: cover; /*设置cover为缩小图像，这样它的一部分就不会被剪裁*/
   background-position: center; /*设置背景图片的初始位置*/
+  position: relative;
 }
-/* Hero Style End */
 
 .hero-form{
   background-color: #fce138;
@@ -88,4 +88,39 @@ section {
   width: 500px;
   color: #024e76;
   border: solid 3px #024e76;
+  position: absolute;
+  bottom: 120px;
+  right: 140px;
 }
+
+.hero-form h3{
+  font-size: 24px;
+  margin: 0;
+}
+
+.hero-form p{
+  margin: 5px 0 15px 0;
+}
+
+.form-input{
+  border: 1px solid #024e76;
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.hero-form label{
+  margin: 0 5px;
+}
+
+.hero-form button{
+  color: #fce138;
+  background-color: #024e76;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+}
+/* Hero Style End */
