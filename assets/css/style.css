@@ -22,6 +22,17 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: -webkit-sticky;
+  /*Use a Vendor Prefix to Support Safari*/
+  position: sticky;
+  /* put the prefixed version first, and the standardized version second.*/
+  top: 0;
+  background-image: url("../images/hero-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* places the image relative to the viewport instead of the element */
+  background-position: 80%;
 }
 
 header h1 {
@@ -29,6 +40,7 @@ header h1 {
   font-size: 36px;
   color: #fce138;
   margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -53,6 +65,14 @@ header nav ul li a {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
 }
 
 /* apply styles to footer */
@@ -96,6 +116,8 @@ section {
   /*设置cover为缩小图像，这样它的一部分就不会被剪裁*/
   background-position: center;
   /*设置背景图片的初始位置*/
+  background-attachment: fixed;
+  background-position: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -115,15 +137,20 @@ section {
   font-style: italic;
   font-size: 55px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
-  background-color: #fce138;
+  background-color: rgba(252, 225, 56, 0.8);
+  /*HEX to RGB converters*/
   padding: 20px;
   color: #024e76;
   border: solid 3px #024e76;
   width: 40%;
   margin: 3.5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  /* Rounded Corners */
 }
 
 .hero-form h3 {
@@ -143,6 +170,7 @@ section {
   color: #024e76;
   width: 100%;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .hero-form label {
@@ -155,9 +183,26 @@ section {
   font-size: 16px;
   padding: 10px 20px;
   border: none;
+  border-radius: 10px;
 }
 
-/* Hero Style End */
+.hero-form button:hover {
+  background-color: #39a6b2;
+}
+
+/* update existing rule with this declaration */
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* create a new rule for focus state */
+
+.form-input:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+  /* remove extra blue border */
+}
 
 /* what we do section */
 
@@ -199,11 +244,14 @@ section {
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid #39a6b2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
 }
 
 .step h3 {
@@ -327,6 +375,10 @@ section {
   color: #fce138;
 }
 
+.contact-info iframe {
+  height: 400px;
+}
+
 .contact-form input, .contact-form textarea {
   border: 1px solid #024e76;
   display: block;
@@ -336,6 +388,13 @@ section {
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75)
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 .contact-form button {
@@ -346,16 +405,12 @@ section {
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10px;
 }
 
-.contact-info iframe {
-  height: 400px;
-}
-
-/* REACH OUT STYLES END */
-
-.flex-row {
-  display: flex;
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
@@ -364,6 +419,8 @@ section {
   header {
     padding-bottom: 0;
     justify-content: center;
+    position: relative;
+    /* undo the stickiness for smaller screen sizes. */
   }
   header h1 {
     width: 100%;
@@ -396,6 +453,20 @@ section {
   .contact-info iframe {
     flex: 1 100%;
   }
+}
+
+/* UTILITIES */
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-row {
+  display: flex;
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
